@@ -26,3 +26,7 @@ hs_err_pid*
 *.xml
 *.iml
 /calendar/.idea/$PRODUCT_WORKSPACE_FILE$
+
+# Eclipse specific file
+*/.classpath
+*/.project
