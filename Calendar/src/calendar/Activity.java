@@ -1,7 +1,6 @@
 package calendar;
 
 import java.util.Calendar;
-import java.util.Locale;
 
 /**
  * An activity object containing a reminder, start and end time, and priority
@@ -11,10 +10,10 @@ import java.util.Locale;
  */
 public class Activity {
     /** Levels of priority. */
-    private enum PRIORITY_LEVELS {NONE, LOW, MED, HIGH}
+    private enum PriorityLevel {NONE, LOW, MED, HIGH}
     
     /** Priority level of the task. */
-    private PRIORITY_LEVELS _priority = PRIORITY_LEVELS.NONE;
+    private PriorityLevel _priority = PriorityLevel.NONE;
     
     /** Description of the activity. */
     private String _description;
@@ -35,7 +34,10 @@ public class Activity {
      * @param description The activity to be reminded of
      */
     Activity(String description) {
-        ;
+        if (description.isEmpty()) {
+            throw new IllegalArgumentException("Description cannot be empty.");
+        }
+        _start = Calendar.getInstance();
     }
     
     /**
@@ -45,7 +47,10 @@ public class Activity {
      * @param endTime     The ending time of the activity
      */
     Activity(String description, Calendar endTime) {
-    
+        if (description.isEmpty()) {
+            throw new IllegalArgumentException("Description cannot be empty.");
+        }
+        _start = Calendar.getInstance();
     }
     
     /**
@@ -56,7 +61,11 @@ public class Activity {
      * @param end         The ending time
      */
     Activity(String description, Calendar start, Calendar end) {
-    
+        if (description.isEmpty()) {
+            throw new IllegalArgumentException("Description cannot be empty.");
+        }
+        _start = start;
+        _end = end;
     }
     
     /**
@@ -68,7 +77,7 @@ public class Activity {
      * @param pr          The level of importance of the reminder
      */
     Activity(String description, Calendar start, Calendar end,
-             PRIORITY_LEVELS pr) {
+             PriorityLevel pr) {
         
     }
     
