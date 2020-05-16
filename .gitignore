@@ -1,4 +1,4 @@
-# Compiled class file
+.exp# Compiled class file
 *.class
 
 # Log file
@@ -26,6 +26,7 @@ hs_err_pid*
 *.xml
 *.iml
 /calendar/.idea/$PRODUCT_WORKSPACE_FILE$
+.idea/
 
 # Eclipse specific file
 */.classpath
