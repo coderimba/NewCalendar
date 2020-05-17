@@ -1,13 +1,26 @@
 package calendar;
 
+import calendar.Activity;
+
 import java.io.Serializable;
 import java.io.File;
 
 import java.lang.String;
 
+import java.util.LinkedList;
 import java.util.Calendar;
-import java.util.HashMap;
 import java.util.regex.Pattern;
+
+/** A day entry in a diary which contains today's date and a reminder, along
+ *  with the level of importance of the task.
+ *  // TODO: Maybe custom labels could be added to this diary entry.
+ *  */
+public class Day {
+    /** Day of the month. */
+    private int _day;
+
+    /** Reminder for the day. */
+    private LinkedList<Activity> _reminders;
 
 // TODO: Maybe custom labels could be added to this diary entry.
 /**
@@ -26,7 +39,7 @@ public class Day implements Serializable {
     private HashMap<Calendar, Activity> _activities;
     
     /** Maximum number for day that could be taken. */
-    static final byte MAX_DAY = 31;
+    static final int MAX_DAY = 31;
     
     /**
      * Regex for a date item in DD/MM/YYYY. Does not check for invalid dates
@@ -38,7 +51,7 @@ public class Day implements Serializable {
         + "(" + "\\d{4}" + ")");
     
     /** Constructor of a day object. */
-    public Day(byte day) {
+    public Day(int day) {
         if (!validDay(day)) {
             throw new IllegalArgumentException("Invalid date: " + day);
         }
@@ -52,7 +65,7 @@ public class Day implements Serializable {
     }
     
     /** Returns whether DAY is valid. */
-    private boolean validDay(byte day) {
+    private boolean validDay(int day) {
         return (1 <= day && day <= MAX_DAY);
     }
     
