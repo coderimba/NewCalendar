@@ -25,6 +25,7 @@ hs_err_pid*
 # IntelliJ specific file
 *.xml
 *.iml
+.idea/
 /calendar/.idea/$PRODUCT_WORKSPACE_FILE$
 .idea/
 
