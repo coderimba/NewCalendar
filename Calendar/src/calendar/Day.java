@@ -9,7 +9,7 @@ import java.util.*;
  *  */
 public class Day {
     /** Day of the month. */
-    private byte _day;
+    private int _day;
 
     /** Reminder for the day. */
     private ArrayList<String> _reminders;
@@ -21,7 +21,7 @@ public class Day {
     private PRIORITY_LEVELS _priority;
 
     /** Maximum number for day that could be taken. */
-    static final byte MAX_DAY = 31;
+    static final int MAX_DAY = 31;
 
     /** Regex for a date item in DD/MM/YYYY. Does not check for invalid dates
      *  such as 31/02/2019. */
@@ -30,7 +30,7 @@ public class Day {
             + "(" + "([0][1-9]|[1][012]" + ")/"
             + "(" + "\\d{4}" + ")";
 
-    public Day(byte day) {
+    public Day(int day) {
         if (!validDay(day)) {
             throw new IllegalArgumentException("Invalid date: " + day);
         }
@@ -44,7 +44,7 @@ public class Day {
     }
 
     /** Returns whether DAY is valid. */
-    private boolean validDay(byte day) {
+    private boolean validDay(int day) {
         return (1 <= day && day <= MAX_DAY);
     }
 }
