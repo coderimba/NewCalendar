@@ -20,16 +20,16 @@ public class Activity {
     
     /**
      * Start and end time of this activity. If any of the fields are
-     * unspecified, then take the start and end to be 0000 hrs and 2359 hrs
-     * of the Pacific Standard Time (PST) respectively.
+     * unspecified, then take the start and end to be 0000 hrs and 2359 hrs of
+     * the Pacific Standard Time (PST) respectively.
      *
      * @see java.util.Calendar
      */
     private Calendar _start, _end;
     
     /**
-     * Creates a new reminder with the current time as the start and 23 59
-     * on today's date as the end.
+     * Creates a new reminder with the current time as the start and 23 59 on
+     * today's date as the end.
      *
      * @param description The activity to be reminded of
      */
