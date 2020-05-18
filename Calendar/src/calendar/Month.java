@@ -39,6 +39,12 @@ public class Month {
     /** Returns whether the month is valid */
     private boolean validMonth(int month) {
         // TODO: Current month checker
-        return (month >= 1 && month <= 12);
+        return (month >= 1 && month <= PossibleMonths.values().length);
+    }
+    
+    @Override
+    public String toString() {
+        // TODO: Find out best format for expressing month as a string, if
+        //       at all needed.
     }
 }
