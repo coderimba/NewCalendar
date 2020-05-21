@@ -14,6 +14,9 @@ import java.util.regex.Pattern;
 /** A day entry in a diary which contains today's date and a reminder, along
  *  with the level of importance of the task.
  *  // TODO: Maybe custom labels could be added to this diary entry.
+ *
+ *  @author Mitchell Tanbun, Christopher Leo Mervyn, Ervin Ng Zikai
+ *
  *  */
 public class Day {
     /** Day of the month. */
@@ -26,17 +29,15 @@ public class Day {
 /**
  * A day entry in a diary which contains today's date and a reminder, along
  * with the level of importance of the task.
- *
- * @author Mitchell Tanbun
  */
 public class Day implements Serializable {
     /** Day of the month. */
     private byte _day;
     
     /**
-     * A list of reminders for the day hashed according to their start time .
+     * A list of reminders for the day hashed according to their start time.
      */
-    private HashMap<Calendar, Activity> _activities;
+    private LinkedList<Calendar, Activity> _activities;
     
     /** Maximum number for day that could be taken. */
     static final int MAX_DAY = 31;
@@ -69,9 +70,7 @@ public class Day implements Serializable {
         return (1 <= day && day <= MAX_DAY);
     }
     
-    /**
-     * Adds a REMINDER to today's date.
-     */
+    /** Adds a REMINDER to today's date. */
     private void addActivity(Activity reminder) {
     
     }

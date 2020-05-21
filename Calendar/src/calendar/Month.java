@@ -23,11 +23,14 @@ public class Month {
     protected ArrayList<Day> dayLst;
     
     /**
-     * Takes in current month's number.
+     * Constructor which takes in the month number to initialize the Month
+     * object.
      *
      * @param month The one-indexed month in which the constructor is called
+     *
+     * @throws IllegalArgumentException if 1-indexed month is out of range
      */
-    public Month(int month) {
+    public Month(int month) throws IllegalArgumentException {
         // TODO: Constructs an object with all days in the month initialized.
         if (!validMonth(month)) {
             throw new IllegalArgumentException("Month is out of range.");
@@ -36,9 +39,8 @@ public class Month {
         _currentMonth = PossibleMonths.values()[month - 1];
     }
     
-    /** Returns whether the month is valid */
+    /** Returns whether the 1-indexed MONTH is valid */
     private boolean validMonth(int month) {
-        // TODO: Current month checker
         return (month >= 1 && month <= PossibleMonths.values().length);
     }
     
@@ -46,5 +48,6 @@ public class Month {
     public String toString() {
         // TODO: Find out best format for expressing month as a string, if
         //       at all needed.
+        return "";
     }
 }
