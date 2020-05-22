@@ -10,10 +10,12 @@ public class Month {
     private enum PossibleMonths {
         JAN, FEB, MAR, APR, MAY, JUN,
         JUL, AUG, SEP, OCT, NOV, DEC
-    };
+    }
+    
+    ;
     
     /** Number of dates in each month. */
-    private static int NumDays[] = {31, 28, 31, 30, 31, 30,
+    private static int numDays[] = {31, 28, 31, 30, 31, 30,
                                     31, 31, 30, 31, 30, 31};
     
     /** Current month. */
@@ -27,7 +29,6 @@ public class Month {
      * object.
      *
      * @param month The one-indexed month in which the constructor is called
-     *
      * @throws IllegalArgumentException if 1-indexed month is out of range
      */
     public Month(int month) throws IllegalArgumentException {
@@ -41,7 +42,7 @@ public class Month {
     
     /** Returns whether the 1-indexed MONTH is valid */
     private boolean validMonth(int month) {
-        return (month >= 1 && month <= PossibleMonths.values().length);
+        return (month >= 1 && month <= NumDays.length);
     }
     
     @Override
