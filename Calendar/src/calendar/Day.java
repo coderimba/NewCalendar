@@ -1,14 +1,13 @@
 package calendar;
 
-import calendar.Activity;
 
 import java.io.Serializable;
 import java.io.File;
 
 import java.lang.String;
 
-import java.util.LinkedList;
 import java.util.Calendar;
+import java.util.LinkedList;
 import java.util.regex.Pattern;
 
 /**
@@ -41,13 +40,26 @@ public class Day implements Serializable {
         + "(" + "[0][1-9]|[1][012]" + ")/"
         + "(" + "\\d{4}" + ")");
     
-    /** Constructor of a day object. */
-    public Day(int day) {
+    /**
+     * Constructor of a {@link Day} object with an int DAY as the parameter
+     * representing the date.
+     *
+     * @throws IllegalArgumentException if date number is invalid.
+     */
+    protected Day(int day) throws IllegalArgumentException {
         if (!validDay(day)) {
             throw new IllegalArgumentException("Invalid date: " + day);
         }
         _day = day;
         _activities = new LinkedList<>();
+    }
+    
+    /**
+     * Constructor of a {@link Day} object from a Calendar object TIME as
+     * the parameter.
+     */
+    protected Day(Calendar time) {
+    
     }
     
     @Override

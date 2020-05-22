@@ -30,11 +30,12 @@ public class Week implements Serializable {
      */
     public Week() {
         setCalendar();
+        Calendar curr = Calendar.getInstance();
         for (int i = 0; i < 7; i++) {
             //getTime() returns an object resembling the Date represented by
             // this Calendar's time value
-            week.offer(Calendar.getTime());
-            Calendar.add(Calendar.DATE, 1);    // 1 day later
+            week.offer(new Day(curr));
+            curr.add(Calendar.DATE, 1);    // 1 day later
         }
     }
     
