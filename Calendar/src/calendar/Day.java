@@ -12,8 +12,8 @@ import java.util.regex.Pattern;
 
 /**
  * A day entry in a diary which contains today's date and a reminder, along
- * with the level of importance of the task. // TODO: Maybe custom labels could
- * be added to this diary entry.
+ * with the level of importance of the task.
+ * // TODO: Maybe custom labels could be added to this diary entry.
  *
  * @author Mitchell Tanbun, Christopher Leo Mervyn, Ervin Ng Zikai
  */
@@ -57,9 +57,13 @@ public class Day implements Serializable {
     /**
      * Constructor of a {@link Day} object from a Calendar object TIME as
      * the parameter.
+     *
+     * @see Calendar#get(int)
+     * @see Calendar#DAY_OF_MONTH
      */
     protected Day(Calendar time) {
-    
+        _day = time.get(Calendar.DAY_OF_MONTH);
+        _activities = new LinkedList<>();
     }
     
     @Override

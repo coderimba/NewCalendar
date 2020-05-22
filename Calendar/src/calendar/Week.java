@@ -7,11 +7,10 @@ import java.util.LinkedList;
 
 /**
  * Week object to hold dates and reminders within those dates in an
- * easily-accessible fashion. This object uses the {@link Calendar} object
- * to obtain the local time from the current device accessing the app.
+ * easily-accessible fashion. This object uses the {@link Calendar} object to
+ * obtain the local time from the current device accessing the app.
  *
  * @author Ervin Ng Zikai
- *
  * @see Calendar
  */
 public class Week implements Serializable {
@@ -27,6 +26,9 @@ public class Week implements Serializable {
     /**
      * Default constructor which automatically creates a {@link Week} object
      * for tracking the next 7 days after the current date on the OS.
+     *
+     * @see Calendar#add(int, int)
+     * @see Calendar#get(int)
      */
     public Week() {
         setCalendar();
@@ -53,10 +55,10 @@ public class Week implements Serializable {
     }
     
     /**
-     * Checks whether days have elapsed since the app was last launched so
-     * that the next few numbers of {@link Day} objects could be
-     * enqueued in the {@link LinkedList}. Returns false if no updates to
-     * the queue of days were needed.
+     * Checks whether days have elapsed since the app was last launched so that
+     * the next few numbers of {@link Day} objects could be enqueued in the
+     * {@link LinkedList}. Returns false if no updates to the queue of days
+     * were needed.
      */
     public boolean requeue() {
         // TODO

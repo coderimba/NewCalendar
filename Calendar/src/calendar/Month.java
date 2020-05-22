@@ -18,8 +18,7 @@ public class Month {
     private PossibleMonths _currentMonth;
     
     /**
-     * ArrayList of <code>Day</code> objects in the form of an Arraylist, much
-     * like a physical calendar.
+     * ArrayList of <code>Day</code> objects much like a physical calendar.
      */
     protected ArrayList<Day> dayLst;
     
