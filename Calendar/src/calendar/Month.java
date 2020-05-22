@@ -1,8 +1,6 @@
 package calendar;
 
-import calendar.Day;
-
-import java.util.Arraylist;
+import java.util.ArrayList;
 
 /** A collection of dates in the month. */
 public class Month {
@@ -12,8 +10,6 @@ public class Month {
         JUL, AUG, SEP, OCT, NOV, DEC
     }
     
-    ;
-    
     /** Number of dates in each month. */
     private static int numDays[] = {31, 28, 31, 30, 31, 30,
                                     31, 31, 30, 31, 30, 31};
@@ -21,7 +17,10 @@ public class Month {
     /** Current month. */
     private PossibleMonths _currentMonth;
     
-    /** ArrayList of Days */
+    /**
+     * ArrayList of <code>Day</code> objects in the form of an Arraylist, much
+     * like a physical calendar.
+     */
     protected ArrayList<Day> dayLst;
     
     /**
@@ -36,13 +35,13 @@ public class Month {
         if (!validMonth(month)) {
             throw new IllegalArgumentException("Month is out of range.");
         }
-        dayLst = new ArrayList<Day>(NumDays[month - 1]);
+        dayLst = new ArrayList<Day>(numDays[month - 1]);
         _currentMonth = PossibleMonths.values()[month - 1];
     }
     
     /** Returns whether the 1-indexed MONTH is valid */
     private boolean validMonth(int month) {
-        return (month >= 1 && month <= NumDays.length);
+        return (month >= 1 && month <= numDays.length);
     }
     
     @Override

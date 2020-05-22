@@ -11,33 +11,23 @@ import java.util.LinkedList;
 import java.util.Calendar;
 import java.util.regex.Pattern;
 
-/** A day entry in a diary which contains today's date and a reminder, along
- *  with the level of importance of the task.
- *  // TODO: Maybe custom labels could be added to this diary entry.
- *
- *  @author Mitchell Tanbun, Christopher Leo Mervyn, Ervin Ng Zikai
- *
- *  */
-public class Day {
-    /** Day of the month. */
-    private int _day;
-
-    /** Reminder for the day. */
-    private LinkedList<Activity> _reminders;
-
-// TODO: Maybe custom labels could be added to this diary entry.
 /**
  * A day entry in a diary which contains today's date and a reminder, along
- * with the level of importance of the task.
+ * with the level of importance of the task. // TODO: Maybe custom labels could
+ * be added to this diary entry.
+ *
+ * @author Mitchell Tanbun, Christopher Leo Mervyn, Ervin Ng Zikai
  */
 public class Day implements Serializable {
     /** Day of the month. */
-    private byte _day;
+    private int _day;
     
     /**
-     * A list of reminders for the day hashed according to their start time.
+     * A list of reminders for the day. The activities are sorted in the
+     * <code>LinkedList</code> in order from earliest to latest in terms of
+     * their start times.
      */
-    private LinkedList<Calendar, Activity> _activities;
+    private LinkedList<Activity> _activities;
     
     /** Maximum number for day that could be taken. */
     static final int MAX_DAY = 31;
@@ -57,7 +47,7 @@ public class Day implements Serializable {
             throw new IllegalArgumentException("Invalid date: " + day);
         }
         _day = day;
-        _activities = new HashMap<>();
+        _activities = new LinkedList<>();
     }
     
     @Override
@@ -71,7 +61,15 @@ public class Day implements Serializable {
     }
     
     /** Adds a REMINDER to today's date. */
-    private void addActivity(Activity reminder) {
+    private boolean addActivity(Activity reminder) {
+        // TODO: Implement function for inserting in linear time.
+        return false;
+    }
     
+    /** Clears the schedule from the current day. */
+    protected boolean clearSchedule() {
+        // TODO: Iterate through entire list of activities and delete those
+        //  activities.
+        return false;
     }
 }
