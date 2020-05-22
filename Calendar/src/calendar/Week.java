@@ -1,6 +1,7 @@
 package calendar;
 
 import java.io.Serializable;
+import java.io.File;
 
 import java.util.Calendar;
 import java.util.LinkedList;
@@ -11,10 +12,12 @@ import java.util.LinkedList;
  * obtain the local time from the current device accessing the app.
  *
  * @author Ervin Ng Zikai
- * @see Calendar
+ * @see    Calendar
+ * @see    File
  */
 public class Week implements Serializable {
-    //attributes
+    /** Number of days in a week */
+    private static final int NUM_DAYS_IN_WEEK = 7;
     
     /**
      * Creates a `LinkedList` of days, modelled as a queue for easily
@@ -33,7 +36,7 @@ public class Week implements Serializable {
     public Week() {
         setCalendar();
         Calendar curr = Calendar.getInstance();
-        for (int i = 0; i < 7; i++) {
+        for (int i = 0; i < NUM_DAYS_IN_WEEK; i++) {
             //getTime() returns an object resembling the Date represented by
             // this Calendar's time value
             week.offer(new Day(curr));
@@ -60,7 +63,18 @@ public class Week implements Serializable {
      * {@link LinkedList}. Returns false if no updates to the queue of days
      * were needed.
      */
-    public boolean requeue() {
+    protected boolean requeue() {
+        // TODO
+        return false;
+    }
+    
+    /**
+     * Saves the current week as a file containing metadata to the memory of
+     * the device of the app.
+     *
+     * @return whether the save was done successfully.
+     */
+    protected boolean saveWeek() {
         // TODO
         return false;
     }
