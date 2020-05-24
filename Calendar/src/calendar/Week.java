@@ -49,11 +49,13 @@ public class Week implements Serializable {
     
     /**
      * Creates a week of {@link Day} objects based on current date based on the
-     * OS.
+     * current device. Only called once when initializing.
+     *
+     * @see Calendar#getInstance()
      */
     public void setCalendar() {
         //getInstance() returns instance of calendar
-        Calendar calendar = Calendar.getInstance();
+        Calendar currTime = Calendar.getInstance();
         // using current time zone
     }
     
@@ -72,9 +74,20 @@ public class Week implements Serializable {
      * Saves the current week as a file containing metadata to the memory of
      * the device of the app.
      *
-     * @return whether the save was done successfully.
+     * @return boolean indicating whether the save was done successfully.
      */
     protected boolean saveWeek() {
+        // TODO
+        return false;
+    }
+    
+    /**
+     * Loads the current state of the Week object since the last time the
+     * app was opened.
+     *
+     * @return boolean indicating whether there were problems loading.
+     */
+    protected boolean loadWeek() {
         // TODO
         return false;
     }
